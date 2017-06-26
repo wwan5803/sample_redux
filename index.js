@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import { createStore, bindActionCreators } from 'redux'
+import { createStore, combineReducers, bindActionCreators } from 'redux'
 import { Provider, connect } from 'react-redux'
 import App from './container/home'
 // import * as mainActions from './Actions/mainAction'
-import mainReduce from './Reducers/mainReduce'
-
+// import mainReduce from './Reducers/mainReduce.js'
+import * as reducers from './Reducers';
 // React component
 // class Counter extends Component {
 //   render() {
@@ -43,8 +43,10 @@ import mainReduce from './Reducers/mainReduce'
 //   }
 // }
 
+const reducer = combineReducers(reducers);
+
 // Store
-const store = createStore(mainReduce)
+const store = createStore(reducer)
 
 // Map Redux state to component props
 // function mapStateToProps(state) {

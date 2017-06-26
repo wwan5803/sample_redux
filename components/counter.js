@@ -10,6 +10,7 @@ class Counter extends Component {
         <button onClick={decrease}>--</button>
           <span>{value.count}</span>
         <button onClick={increase}>++</button>
+        {console.log(value.counter)}
         {
           value.flag &&
           <div>
@@ -17,7 +18,7 @@ class Counter extends Component {
           </div>
         }
         {
-          !value.flag && 
+          !value.flag &&
           <div>
             no
           </div>
